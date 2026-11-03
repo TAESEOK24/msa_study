@@ -1,0 +1,7 @@
+server.port: 7004
+spring.web.error.include-message: always
+
+logging:
+  level:
+    root: INFO
+    se.magnus: DEBUG
