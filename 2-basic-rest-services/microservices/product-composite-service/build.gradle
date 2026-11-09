@@ -26,6 +26,7 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-webflux-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 	implementation 'org.springframework.boot:spring-boot-starter-json'
+	implementation 'org.springdoc:springdoc-openapi-starter-webflux-ui:3.0.3'
 }
 
 tasks.named('test') {

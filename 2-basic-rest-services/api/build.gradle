@@ -22,7 +22,7 @@ ext {
 
 dependencies {
     implementation platform("org.springframework.boot:spring-boot-dependencies:${springBootVersion}")
-
+    implementation 'org.springdoc:springdoc-openapi-starter-common:3.0.3'
     implementation 'org.springframework.boot:spring-boot-starter-webflux'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
