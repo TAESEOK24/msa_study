@@ -18,6 +18,9 @@ repositories {
 
 ext {
     springBootVersion = '4.0.9'
+    mapstructVersion = "1.6.3"
+
+    
 }
 
 dependencies {
@@ -25,6 +28,11 @@ dependencies {
     implementation 'org.springdoc:springdoc-openapi-starter-common:3.0.3'
     implementation 'org.springframework.boot:spring-boot-starter-webflux'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation "org.mapstruct:mapstruct:${mapstructVersion}"
+    
+    compileOnly "org.mapstruct:mapstruct-processor:${mapstructVersion}"
+    annotationProcessor "org.mapstruct:mapstruct-processor:${mapstructVersion}"
+    testAnnotationProcessor "org.mapstruct:mapstruct-processor:${mapstructVersion}"
 }
 
 tasks.named('test') {
