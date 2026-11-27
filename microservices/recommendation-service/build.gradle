@@ -13,6 +13,12 @@ java {
 	}
 }
 
+
+ext {
+	mapstructVersion = "1.6.3"   // 🔧 교재 "1.6.3.Final"
+	set('testcontainers.version', '1.21.4')
+}
+
 repositories {
 	mavenCentral()
 }
@@ -26,6 +32,18 @@ dependencies {
 
 	implementation project(':api')
 	implementation project(':util')
+
+		implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+
+	implementation "org.mapstruct:mapstruct:${mapstructVersion}"
+	annotationProcessor "org.mapstruct:mapstruct-processor:${mapstructVersion}"
+	testAnnotationProcessor "org.mapstruct:mapstruct-processor:${mapstructVersion}"
+	compileOnly "org.mapstruct:mapstruct-processor:${mapstructVersion}"
+
+	testImplementation 'org.springframework.boot:spring-boot-starter-data-mongodb-test'   // 🔧 @DataMongoTest
+	testImplementation 'org.springframework.boot:spring-boot-testcontainers'
+	testImplementation 'org.testcontainers:junit-jupiter'
+	testImplementation 'org.testcontainers:mongodb'
 }
 
 tasks.named('test') {

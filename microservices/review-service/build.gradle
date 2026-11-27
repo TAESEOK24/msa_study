@@ -13,6 +13,11 @@ java {
 	}
 }
 
+
+ext {
+	mapstructVersion = "1.6.3"
+}
+
 repositories {
 	mavenCentral()
 }
@@ -26,6 +31,16 @@ dependencies {
 
 		implementation project(':api')
 	implementation project(':util')
+
+		implementation "org.mapstruct:mapstruct:${mapstructVersion}"
+	annotationProcessor "org.mapstruct:mapstruct-processor:${mapstructVersion}"
+	testAnnotationProcessor "org.mapstruct:mapstruct-processor:${mapstructVersion}"
+	compileOnly "org.mapstruct:mapstruct-processor:${mapstructVersion}"
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	runtimeOnly 'com.mysql:mysql-connector-j'   // 🔧 교재 mysql:mysql-connector-java
+	testImplementation 'org.springframework.boot:spring-boot-testcontainers'
+	testImplementation 'org.testcontainers:testcontainers-junit-jupiter'
+	testImplementation 'org.testcontainers:testcontainers-mysql'  
 }
 
 tasks.named('test') {
