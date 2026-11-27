@@ -1,4 +1,4 @@
-package se.magnus.microservices.core.product;
+package se.magnus.microservices.core.recommendation;
 
 import org.springframework.boot.testcontainers.service.connection.ServiceConnection;
 import org.testcontainers.containers.MongoDBContainer;
