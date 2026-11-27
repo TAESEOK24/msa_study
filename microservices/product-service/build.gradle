@@ -23,6 +23,9 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-actuator-test'
 	testImplementation 'org.springframework.boot:spring-boot-starter-webflux-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+	implementation project(':api')
+	implementation project(':util')
 }
 
 tasks.named('test') {

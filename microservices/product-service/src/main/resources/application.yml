@@ -1,0 +1,9 @@
+server.port: 7002
+logging:
+  level:
+    root: INFO
+    se.magnus: DEBUG
+spring:
+  web:
+    error:
+      include-message: always
