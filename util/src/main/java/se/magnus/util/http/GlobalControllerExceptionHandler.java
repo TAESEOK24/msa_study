@@ -28,7 +28,7 @@ class GlobalControllerExceptionHandler {
     return createHttpErrorInfo(NOT_FOUND, request, ex);
   }
 
-  @ResponseStatus(UNPROCESSABLE_CONTENT)   (Spring 7에서 deprecated)
+  @ResponseStatus(UNPROCESSABLE_CONTENT) 
   @ExceptionHandler(InvalidInputException.class)
   public @ResponseBody HttpErrorInfo handleInvalidInputException(
     ServerHttpRequest request, InvalidInputException ex) {
