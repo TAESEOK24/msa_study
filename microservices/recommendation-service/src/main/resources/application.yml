@@ -1,16 +1,25 @@
 server.port: 7003
+
 logging:
   level:
     root: INFO
     se.magnus: DEBUG
+
 spring:
   web:
     error:
       include-message: always
-
-spring.data.mongodb.auto-index-creation: true
+  mongodb:
+    uri: mongodb://localhost:27017/recommendation-db
+  data:
+    mongodb:
+      auto-index-creation: true
 
 ---
 spring.config.activate.on-profile: docker
 
 server.port: 8080
+
+spring:
+  mongodb:
+    uri: mongodb://mongodb:27017/recommendation-db
