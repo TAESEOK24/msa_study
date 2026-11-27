@@ -2,7 +2,7 @@ package se.magnus.util.http;
 
 import static org.springframework.http.HttpStatus.NOT_FOUND;
 import static org.springframework.http.HttpStatus.UNPROCESSABLE_CONTENT;
-import static org.springframework.http.HttpStatus.UNPROCESSABLE_ENTITY;
+
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,7 +28,7 @@ class GlobalControllerExceptionHandler {
     return createHttpErrorInfo(NOT_FOUND, request, ex);
   }
 
-  @ResponseStatus(UNPROCESSABLE_CONTENT)   // 🔧 교재 UNPROCESSABLE_ENTITY (Spring 7에서 deprecated)
+  @ResponseStatus(UNPROCESSABLE_CONTENT)   (Spring 7에서 deprecated)
   @ExceptionHandler(InvalidInputException.class)
   public @ResponseBody HttpErrorInfo handleInvalidInputException(
     ServerHttpRequest request, InvalidInputException ex) {
